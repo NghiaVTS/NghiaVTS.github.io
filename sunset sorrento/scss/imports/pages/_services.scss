@@ -1,0 +1,220 @@
+.services {
+    .scos {
+        .scos__sliders {
+            .flickity-page-dots {
+                bottom: -22px;
+                .dot {
+                    height: 4px;
+                    width: 40px;
+                    margin: 0;
+                    border-radius: 0;
+                    background-color: $yellow-cl;
+                }
+            }
+
+            &-item {
+                position: relative;
+                margin-right: 54px;
+                img {
+                    z-index: -1 !important;
+                }
+                .title {
+                    position: absolute;
+                    width: fit-content;
+                    z-index: 1;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+    .scsb {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            .scsb__textbox {
+                display: flex;
+                flex-direction: column;
+                &-boxes {
+                    max-width: 486px;
+                    margin-top: 90px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 55px;
+                    .item {
+                        display: flex;
+                        gap: 25px;
+                    }
+                }
+            }
+            .scsb__thumbnail {
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+                &-content {
+                    width: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    @include mid(true);
+                    flex-direction: column;
+                    .title {
+                        @include text(72px, csi, auto, $white-cl, none);
+                    }
+                    h4 {
+                        margin-bottom: 70px;
+                    }
+                }
+            }
+        }
+    }
+    .scincrnum {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            .scincrnum__item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .num {
+                    padding-bottom: 30px;
+                    @include text(60px, ol, auto, $yellow-cl, none);
+                }
+            }
+        }
+    }
+    .scpp {
+        position: relative;
+        width: 100%;
+        .scpp__bg {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 700px;
+            background-color: #151b20;
+            z-index: -1;
+        }
+        .container {
+            width: 100%;
+            .scpp__header {
+                position: relative;
+                z-index: 2;
+                .bg {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    @include text(240px, ol, auto, $blue-bg-cl, none);
+                    z-index: -1;
+                }
+            }
+            .scpp__boxes {
+                width: 100%;
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 24px;
+                &-item {
+                    margin-top: 100px;
+                    width: 100%;
+                    height: 556px;
+                    padding: 40px 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background-color: $blue-bg-cl;
+                    border: 1px solid $yellow-cl;
+                    .title {
+                        width: 100%;
+                        @include mid(true);
+                        .price {
+                            margin-top: 30px;
+                            margin-bottom: 15px;
+                            @include text(60px, ol, auto, $yellow-cl, none);
+                        }
+                        .each {
+                            color: $yellow-cl;
+                        }
+                        .line {
+                            position: relative;
+                            margin-top: 35px;
+                            margin-bottom: 55px;
+                            width: 5px;
+                            height: 5px;
+                            background-color: $yellow-cl;
+                            transform: rotate(-45deg);
+                            &::before {
+                                transform: rotate(45deg) !important;
+                                position: absolute;
+                                content: "";
+                                border-top: 1px solid $yellow-cl;
+                                width: 183px;
+                                top: 71px;
+                                left: -20px;
+                                z-index: 5;
+                            }
+                            &::after {
+                                transform: rotate(45deg) !important;
+                                position: absolute;
+                                content: "";
+                                border-top: 1px solid $yellow-cl;
+                                width: 183px;
+                                top: -67px;
+                                right: -20px;
+                                z-index: 5;
+                            }
+                        }
+                    }
+                    .desc {
+                        @include mid(true);
+                        gap: 16px;
+                    }
+                    .btn {
+                        margin-top: 50px;
+                    }
+                    &:nth-child(2) {
+                        position: relative;
+                        height: 612px;
+                        background-color: black;
+                        .padding {
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .scop {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        &__content {
+            max-width: 485px;
+            @include mid(true);
+            text-align: center;
+            &-header {
+                margin-bottom: 40px;
+            }
+            &-desc {
+                @include mid(true);
+                span {
+                    @include text(24px, ci, 40px, $white-cl, none);
+                    margin-bottom: 80px;
+                }
+            }
+        }
+    }
+}

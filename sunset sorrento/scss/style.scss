@@ -1,0 +1,31 @@
+/*core, variables, mixins,... */
+@import "imports/core/_reset.scss";
+@import "imports/core/_variables.scss";
+@import "imports/core/_mixins.scss";
+@import "imports/core/_layouts.scss";
+@import "imports/core/_libs";
+@import "imports/core/_components.scss";
+
+/*navigation, header, footer*/
+@import "imports/core/_footer.scss";
+@import "imports/core/_header.scss";
+
+/*pages*/
+@import "imports/pages/home.scss";
+@import "imports/pages/aboutus.scss";
+@import "imports/pages/services.scss";
+@import "imports/pages/events.scss";
+@import "imports/pages/menu.scss";
+@import "imports/pages/diemden.scss";
+@import "imports/pages/thuvien.scss";
+@import "imports/pages/lienhe.scss";
+@import "imports/pages/sukien-chitiet.scss";
+@import "imports/pages/sukien-chitiet-extra.scss";
+@import "imports/pages/dichvu-chitiet.scss";
+@import "imports/pages/diemden-chitiet.scss";
+
+/*code*/
+/*
+essential styles:
+these make the slideshow work
+*/

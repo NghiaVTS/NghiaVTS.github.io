@@ -1,0 +1,136 @@
+.aboutus {
+    .scbanner {
+        margin-bottom: 120px;
+        padding: 0 0;
+        height: 80vh;
+        overflow: hidden;
+        position: relative;
+
+        &__bg {
+            position: absolute;
+            object-fit: cover;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        .container {
+            height: 100%;
+            position: relative;
+            .scbanner__textbox {
+                position: absolute;
+                top: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+
+                -webkit-transition: opacity 1s;
+                -moz-transition: opacity 1s;
+                -o-transition: opacity 1s;
+                transition: opacity 1s;
+
+                box-sizing: border-box;
+
+                background-size: cover;
+                &-path {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 8px;
+                    .main {
+                        @include text(16px, ol, 24px, $yellow-cl, none);
+                    }
+                    span {
+                        width: 4px;
+                        height: 4px;
+                        background-color: $yellow-cl;
+                        transform: rotate(-45deg);
+                    }
+                    .linked {
+                        @include text(16px, ol, 24px, $white-cl, none);
+                    }
+                }
+            }
+        }
+    }
+    .scssr {
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include md {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: var(--pd-section);
+            }
+            img {
+                max-width: 585px;
+            }
+            .scssr__textbox {
+                display: flex;
+                flex-direction: column;
+                max-width: 500px;
+                gap: 50px;
+                .bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    .awards {
+                        .links {
+                            margin-top: 15px;
+                            width: fit-content;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+                            a {
+                                color: $white-cl;
+                                border-bottom: 1px solid $white-cl;
+                            }
+                        }
+                    }
+                    .contact {
+                        .title {
+                            margin-bottom: 15px;
+                        }
+                        .info {
+                            display: flex;
+                            gap: 5px;
+                        }
+                        .fanpages {
+                            margin-top: 50px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sccontents {
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 45px;
+            @include md {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .item {
+                max-width: 383px;
+                display: flex;
+                align-items: flex-start;
+                gap: 25px;
+                .title {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

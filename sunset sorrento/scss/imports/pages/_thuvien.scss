@@ -1,0 +1,30 @@
+.thuvien {
+    .scgallery {
+        .container {
+            @include mid(true);
+            .scgallery__tabs {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 50px;
+                padding: 13px;
+                gap: 24px;
+
+                border-bottom: 1px solid $yellow-cl;
+                span {
+                    height: 100%;
+                    @include text(14px, ol, 30px, $white-cl, uppercase);
+                    cursor: pointer;
+                }
+            }
+            .scgallery__pics {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+                img {
+                    cursor: zoom-in;
+                }
+            }
+        }
+    }
+}
