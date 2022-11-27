@@ -1,0 +1,401 @@
+h1 {
+    @include text(var(--h1-fs), csi, var(--h1-lh), $white-cl, none);
+}
+h2 {
+    @include text(var(--h2-fs), ol, var(--h2-lh), $white-cl, none);
+}
+h3 {
+    @include text(var(--h3-fs), ol, var(--h3-lh), $white-cl, none);
+}
+h4 {
+    @include text(var(--h4-fs), ol, var(--h4-lh), $white-cl, none);
+}
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+a {
+    text-decoration: none;
+}
+
+.btn-yellow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $white-cl;
+    padding: 16px 42.5px;
+    background-color: $btn-yellow-cl;
+    width: fit-content;
+    span {
+        @include text(var(--body14-fs), owr, var(--body14-lh), $white-cl, uppercase);
+        letter-spacing: 2.8px;
+    }
+    &:hover {
+        background-color: $white-cl;
+        span {
+            color: #090c0f;
+        }
+    }
+    @include xs {
+        padding: 16px 42.5px;
+    }
+}
+
+.btn-blue {
+    position: relative;
+    margin-top: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include text(14px, owr, 20px, $white-cl, uppercase);
+
+    padding: 20px 60px;
+    width: fit-content;
+    border: 2px solid $btn-yellow-cl;
+    img {
+        margin-left: 20px;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: calc(100% - (var(--btn-margin) * 2));
+        height: calc(100% - (var(--btn-margin) * 2));
+        top: var(--btn-margin);
+        left: var(--btn-margin);
+        background-color: #1c2329;
+        z-index: -1;
+    }
+    &:hover {
+        &::after {
+            background-color: $btn-yellow-cl;
+        }
+    }
+}
+.main {
+    .scbanner {
+        margin-bottom: 120px;
+        padding: 0 0;
+        height: 61.3vh;
+        overflow: hidden;
+        position: relative;
+        &__bg {
+            position: absolute;
+            object-fit: cover;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        .container {
+            height: 100%;
+            position: relative;
+            .scbanner__textbox {
+                position: absolute;
+                top: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+
+                -webkit-transition: opacity 1s;
+                -moz-transition: opacity 1s;
+                -o-transition: opacity 1s;
+                transition: opacity 1s;
+
+                box-sizing: border-box;
+
+                background-size: cover;
+                &-path {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 8px;
+                    .main {
+                        @include text(16px, ol, 24px, $yellow-cl, none);
+                    }
+                    span {
+                        width: 4px;
+                        height: 4px;
+                        background-color: $yellow-cl;
+                        transform: rotate(-45deg);
+                    }
+                    .linked {
+                        @include text(16px, ol, 24px, $white-cl, none);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sub {
+    .scbanner {
+        margin-bottom: 120px;
+        padding: 0 0;
+        height: 61.3vh;
+        overflow: hidden;
+        position: relative;
+        &__bg {
+            position: absolute;
+            object-fit: cover;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        .container {
+            height: 100%;
+            position: relative;
+            .scbanner__textbox {
+                position: absolute;
+
+                display: flex;
+                flex-direction: column;
+                top: 63%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+
+                -webkit-transition: opacity 1s;
+                -moz-transition: opacity 1s;
+                -o-transition: opacity 1s;
+                transition: opacity 1s;
+
+                box-sizing: border-box;
+
+                background-size: cover;
+                &-path {
+                    margin-top: 10px;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    p {
+                        @include text(16px, rr, 30px, $white-cl, none);
+                    }
+                    span {
+                        width: 8px;
+                        height: 8px;
+                        background-color: $white-cl;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    position: relative;
+    background-color: $dark-bg-cl;
+    .padding {
+        content: "";
+        width: 22%;
+        height: 100%;
+        background-color: #151b20;
+        z-index: 4;
+    }
+    // &::after {
+    //     position: absolute;
+    //     left: 30%;
+    //     content: "";
+    //     max-width: 11.5%;
+    //     height: 100%;
+    //     background-color: #151b20;
+    //     z-index: 0;
+    // }
+    &-box {
+        width: 100%;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        .title {
+            @include mid(true);
+            @include text(24px, mr, 40px, $yellow-cl, none);
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        form {
+            overflow: hidden;
+            width: 100%;
+            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            input:not(:last-child) {
+                width: 100%;
+                @include text(16px, mr, 30px, $white-cl, none);
+                border: none;
+                outline: 0;
+                border-bottom: 0.5px solid $white-cl;
+                background-color: $dark-bg-cl;
+            }
+            input::placeholder {
+                @include text(16px, mr, 30px, $white-cl, none);
+            }
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                cursor: pointer;
+                background: url("../../../img/Trangchu/Calendar_light.png") no-repeat;
+                width: 10px;
+                height: 10px;
+            }
+            select {
+                all: unset;
+                cursor: pointer;
+                @include text(16px, mr, 30px, $white-cl, none);
+                border: none;
+                outline: 0;
+                border-bottom: 0.5px solid $white-cl;
+                background-color: $dark-bg-cl;
+                background: url("../../../img/Trangchu/arrow-form-select.png") no-repeat right $dark-bg-cl;
+            }
+            .btn-yellow {
+                width: 100%;
+                cursor: pointer;
+                &:hover {
+                    color: $dark-bg-cl;
+                }
+            }
+        }
+    }
+}
+
+.textbox {
+    display: flex;
+    flex-direction: column;
+    .desc {
+        margin-top: 25px;
+        margin-bottom: 5px;
+    }
+    .section {
+        margin-bottom: 10px;
+        @include text(24px, ci, 40px, $btn-yellow-cl, none);
+    }
+    .after {
+        width: 10px;
+        height: 10px;
+        position: relative;
+        margin-top: 20px;
+        background-color: $yellow-cl;
+        transform: rotate(-45deg);
+        &::before {
+            transform: rotate(45deg) !important;
+            position: absolute;
+            content: "";
+            border-top: 1px solid $yellow-cl;
+            width: 142px;
+            top: 61px;
+            left: -9px;
+            z-index: 5;
+        }
+    }
+}
+
+.header_box {
+    .section {
+        margin-bottom: 10px;
+        @include text(24px, ci, 40px, $yellow-cl, none);
+    }
+    @include mid(true);
+    margin-bottom: 70px;
+    .before-after {
+        position: relative;
+        margin-top: 20px;
+        width: 10px;
+        height: 10px;
+        background-color: $yellow-cl;
+        transform: rotate(-45deg);
+        &::before {
+            transform: rotate(45deg) !important;
+            position: absolute;
+            content: "";
+            border-top: 1px solid $yellow-cl;
+            width: 8rem;
+            top: 39px;
+            left: -1px;
+            z-index: 5;
+        }
+        &::after {
+            transform: rotate(45deg) !important;
+            position: absolute;
+            content: "";
+            border-top: 1px solid $yellow-cl;
+            width: 8rem;
+            top: -30px;
+            right: 0px;
+            z-index: 5;
+        }
+    }
+}
+
+.blogs {
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    .item {
+        max-width: 384px;
+        transform: scale(1);
+        @include transition($t);
+        .img {
+            overflow: hidden;
+            height: 0;
+            padding-bottom: 78%;
+            position: relative;
+            .thumbnail {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(1);
+                @include transition($t);
+            }
+        }
+        .textbox {
+            position: relative;
+            background-color: $dark-bg-cl;
+            padding: 45px 32px;
+            .section {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                span {
+                    width: 4px;
+                    height: 4px;
+                    background-color: $yellow-cl;
+                    transform: rotate(-45deg);
+                }
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                border-top: 1px solid $yellow-cl;
+                width: 134px;
+                top: 87%;
+                left: 0;
+                z-index: 3;
+            }
+        }
+        &:hover {
+            transform: scale(1.1);
+            @include transition($t);
+        }
+    }
+}

@@ -1,0 +1,99 @@
+.footer {
+    background-color: $dark-bg-cl;
+    position: relative;
+    .btt-btn {
+        position: fixed;
+        bottom: 80px;
+        right: 40px;
+        cursor: pointer;
+    }
+    .container {
+        .footer__info {
+            padding: var(--pd-section) 0;
+
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            position: relative;
+            @include sm {
+                @include mid(true);
+                flex-wrap: wrap;
+                gap: 30px;
+                &-contacts {
+                    @include mid(true);
+                }
+                &-fanpage {
+                    p {
+                        margin-top: 30px !important;
+                        margin-bottom: 25px !important;
+                    }
+                }
+                &-opentime {
+                    align-items: center !important;
+                }
+            }
+            &-contacts {
+                display: flex;
+                flex-direction: column;
+                .title {
+                    @include text(24px, ol, 40px, $white-cl, none);
+                    margin-bottom: 24px;
+                }
+                .item {
+                    display: flex;
+                    align-items: center;
+                    gap: 25px;
+                    margin-bottom: 16px;
+                    p {
+                        @include text(16px, mr, 30px, $white-cl, none);
+                    }
+                }
+            }
+            &-fanpage {
+                left: 50%;
+
+                max-width: 391px;
+                @include mid(true);
+                flex-direction: column;
+                text-align: center;
+                p {
+                    margin-top: 50px;
+                    margin-bottom: 45px;
+                    @include text(24px, ci, 40px, $white-cl, none);
+                }
+                .fanpages {
+                    display: flex;
+                    gap: 24px;
+                }
+            }
+            &-opentime {
+                display: flex;
+                align-items: flex-end;
+                flex-direction: column;
+                .title {
+                    @include text(24px, ol, 40px, $white-cl, none);
+                    margin-bottom: 24px;
+                }
+                .item {
+                    display: flex;
+                    gap: 10px;
+                    .day {
+                        @include text(16px, mr, 30px, $yellow-cl, none);
+                    }
+                    .time {
+                        @include text(16px, mr, 30px, $white-cl, none);
+                    }
+                }
+            }
+        }
+    }
+    .copyright {
+        background-color: $blue-bg-cl;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include text(16px, mr, 30px, $white-cl, none);
+    }
+}

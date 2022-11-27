@@ -1,0 +1,89 @@
+.lienhe {
+    .scoc {
+        .container {
+            width: 100%;
+            display: flex;
+
+            .scoc__form {
+                width: 52%;
+                margin-top: 70px;
+                position: relative;
+                background-color: black;
+
+                &-box {
+                    width: 100%;
+                    padding-left: 90px;
+                    padding-bottom: 50px;
+                    .title {
+                        margin-bottom: 30px;
+                    }
+                    form {
+                        width: 100%;
+                        input:not(:last-child) {
+                            background-color: black;
+                        }
+                        select {
+                            background-color: black;
+                        }
+                        .btn {
+                            width: 100%;
+                            @include mid(true);
+                            .btn-yellow {
+                                margin-top: 10px;
+                                width: fit-content;
+                            }
+                        }
+                    }
+                }
+            }
+            .scoc__content {
+                padding-left: 60px;
+                width: 48%;
+                .desc {
+                    .info {
+                        margin-top: 15px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                        .item {
+                            display: flex;
+                            .icon {
+                                position: relative;
+                                width: 60px;
+                                height: 60px;
+                                img {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                }
+                            }
+                            .text {
+                                span {
+                                    @include text(24px, ol, 40px, $white-cl, none);
+                                }
+                            }
+                        }
+                    }
+                    .fanpage {
+                        margin-top: 15px;
+                        display: flex;
+                        gap: 16px;
+                    }
+                }
+            }
+            @include md {
+                gap: 30px;
+                @include mid(true);
+                .scoc__form {
+                    margin-top: 0px;
+                    width: 588px;
+                }
+                .scoc__content {
+                    padding-left: 0;
+                    width: 80%;
+                }
+            }
+        }
+    }
+}

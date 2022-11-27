@@ -1,0 +1,67 @@
+.menu {
+    .sccontent {
+        @include mid(true);
+        &__menu {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            @include sm {
+                grid-template-columns: 1fr;
+            }
+            .item {
+                position: relative;
+                overflow: hidden;
+                padding: 25px;
+                transform: scale(1);
+                @include transition($t);
+                &:hover {
+                    transform: scale(1.1);
+                    @include transition($t);
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+                .text {
+                    position: absolute;
+                    width: 100%;
+                    @include mid(true);
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    p {
+                        @include text(72px, csi, auto, $white-cl, none);
+                    }
+                    span {
+                        position: relative;
+                        margin-top: 40px;
+                        width: 10px;
+                        height: 10px;
+                        background-color: $yellow-cl;
+                        transform: rotate(-45deg);
+                        &::before {
+                            transform: rotate(45deg) !important;
+                            position: absolute;
+                            content: "";
+                            border-top: 1px solid $yellow-cl;
+                            width: 8rem;
+                            top: 39px;
+                            left: -1px;
+                            z-index: 5;
+                        }
+                        &::after {
+                            transform: rotate(45deg) !important;
+                            position: absolute;
+                            content: "";
+                            border-top: 1px solid $yellow-cl;
+                            width: 8rem;
+                            top: -30px;
+                            right: 0px;
+                            z-index: 5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

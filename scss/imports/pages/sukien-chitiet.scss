@@ -1,0 +1,367 @@
+.sukien-chitiet {
+    main {
+        .container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 25px;
+            .sccontent {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                grid-area: 1/1/2/9;
+                gap: var(--pd-section);
+                .text {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    h4 {
+                        margin-bottom: 25px;
+                    }
+                    p {
+                        margin-bottom: 40px;
+                    }
+                    .thumbnails {
+                        width: 100%;
+                        margin-bottom: 90px;
+                        display: flex;
+                        gap: 24px;
+                        img {
+                            max-width: 50%;
+                            height: auto;
+                        }
+                    }
+                    .style {
+                        @include text(24px, ci, 40px, $white-cl, none);
+                        text-align: center;
+                    }
+                    .mid {
+                        width: 100%;
+                        @include mid(true);
+                        h4 {
+                            color: $yellow-cl;
+                        }
+                    }
+                    .left {
+                        margin-top: 25px;
+                        color: $yellow-cl;
+                    }
+                }
+                .form {
+                    background-color: black;
+                    .padding {
+                        width: 12.8%;
+                    }
+                    &-box {
+                        @include mid(true);
+                        width: 100%;
+                        padding-bottom: 50px;
+                        .title {
+                            margin-bottom: 30px;
+                        }
+                        form {
+                            width: 100%;
+                            padding: 0 100px;
+                            input:not(:last-child) {
+                                background-color: black;
+                            }
+                            select {
+                                background-color: black;
+                            }
+                            .btn-yellow {
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                }
+                .tabs {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .top {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .tags {
+                            display: flex;
+
+                            gap: 4px;
+                            p {
+                                padding: 4px 8px;
+                                background-color: #222d3b;
+                                @include text(var(--body14-fs), mr, var(--body14-lh), $white-cl, none);
+                            }
+                        }
+                    }
+                    .line {
+                        width: 100%;
+                        border: 0.5px solid $white-cl;
+                        margin: 45px 0;
+                    }
+                    .bottom {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        .item {
+                            display: flex;
+                            align-items: center;
+                            img {
+                                width: 76px;
+                                height: 76px;
+                            }
+                            .text {
+                                padding-left: 16px;
+                                span {
+                                    @include text(16px, ol, 24px, $white-cl, none);
+                                }
+                                p {
+                                    @include text(14px, ci, 24px, $white-cl, none);
+                                }
+                            }
+                        }
+                    }
+                }
+                .another {
+                    display: flex;
+                    flex-direction: column;
+                    .blogs {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        @include md {
+                            grid-template-columns: 1fr;
+                        }
+                        .item {
+                            .textbox {
+                                padding: 32px 16px;
+                            }
+                        }
+                    }
+                }
+            }
+            .sccollumn {
+                width: 100%;
+                grid-area: 1/10/2/13;
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+                &__info {
+                    width: 100%;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    border: 1px solid $yellow-cl;
+
+                    .padding {
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        pointer-events: none;
+                    }
+                    .face {
+                        margin: 30px 0;
+                    }
+                    &-text {
+                        .title {
+                            color: $yellow-cl;
+                            margin-bottom: 5px;
+                        }
+                    }
+                    &-links {
+                        margin-top: 35px;
+                        margin-bottom: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 5px;
+                    }
+                }
+                &__search {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    input {
+                        padding: 8px;
+                        width: 100%;
+                        border: none;
+                        outline: 0;
+                        background-color: $blue-bg-cl;
+                        @include text(16px, mr, 30px, $white-cl, none);
+                        border-bottom: 0.5px solid $white-cl;
+                        &::placeholder {
+                            @include text(16px, mr, 30px, $white-cl, none);
+                        }
+                    }
+                    img {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: 2px;
+                        cursor: pointer;
+                    }
+                }
+                &__categories {
+                    display: flex;
+                    flex-direction: column;
+                    .title {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 8px;
+                        margin-bottom: 24px;
+                        span {
+                            width: 8px;
+                            height: 8px;
+                            background-color: $yellow-cl;
+                            transform: rotate(-45deg);
+                        }
+                        p {
+                            @include text(16px, ol, 24px, $yellow-cl, none);
+                        }
+                    }
+                    .text {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 14px;
+                        .item {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        }
+                    }
+                }
+                &__posts {
+                    display: flex;
+                    flex-direction: column;
+                    .title {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 8px;
+                        margin-bottom: 24px;
+                        span {
+                            width: 8px;
+                            height: 8px;
+                            background-color: $yellow-cl;
+                            transform: rotate(-45deg);
+                        }
+                        p {
+                            @include text(16px, ol, 24px, $yellow-cl, none);
+                        }
+                    }
+                    .posts {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        gap: 8px;
+                        .item {
+                            display: flex;
+                            align-items: center;
+                            gap: 15px;
+                            .text {
+                                span {
+                                    @include text(16px, ol, 24px, $white-cl, none);
+                                }
+                                p {
+                                    @include text(12px, mr, 17px, $white-cl, none);
+                                }
+                            }
+                        }
+                    }
+                }
+                &__tags {
+                    display: flex;
+                    flex-direction: column;
+                    .title {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 8px;
+                        margin-bottom: 24px;
+                        span {
+                            width: 8px;
+                            height: 8px;
+                            background-color: $yellow-cl;
+                            transform: rotate(-45deg);
+                        }
+                        p {
+                            @include text(16px, ol, 24px, $yellow-cl, none);
+                        }
+                    }
+                    .tags {
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 8px;
+                        span {
+                            padding: 4px 8px;
+                            background-color: #222d3b;
+                            @include text(var(--body14-fs), mr, var(--body14-lh), $white-cl, none);
+                        }
+                    }
+                }
+                &__gallery {
+                    display: flex;
+                    flex-direction: column;
+                    .title {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 8px;
+                        margin-bottom: 24px;
+                        span {
+                            width: 8px;
+                            height: 8px;
+                            background-color: $yellow-cl;
+                            transform: rotate(-45deg);
+                        }
+                        p {
+                            @include text(16px, ol, 24px, $yellow-cl, none);
+                        }
+                    }
+                    .gallery {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 8px;
+                        img {
+                            cursor: pointer;
+                        }
+                    }
+                }
+                &__logo {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    padding: 40px 0;
+                    background-color: $dark-bg-cl;
+                    .logo {
+                        margin-bottom: 40px;
+                    }
+                    .btn-yellow {
+                        margin-top: 30px;
+                    }
+                }
+            }
+            @include sm {
+                grid-template-columns: 1fr;
+                .sccontent {
+                    grid-area: initial;
+                }
+                .sccollumn {
+                    grid-area: initial;
+                    &__gallery {
+                        .gallery {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

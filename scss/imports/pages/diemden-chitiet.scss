@@ -1,0 +1,95 @@
+.diemden-chitiet {
+    main {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 25px;
+            .sccontent {
+                display: flex;
+                flex-direction: column;
+                grid-area: 1/3/2/11;
+                gap: var(--pd-section);
+                @include sm {
+                    grid-area: 1/2/2/12;
+                }
+                @include xs {
+                    grid-area: 1/1/2/13;
+                }
+                .text {
+                    h4 {
+                        margin-bottom: 25px;
+                    }
+                    p {
+                        margin-bottom: 40px;
+                    }
+                }
+
+                .tabs {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .top {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .tags {
+                            display: flex;
+
+                            gap: 4px;
+                            p {
+                                padding: 4px 8px;
+                                background-color: #222d3b;
+                                @include text(var(--body14-fs), mr, var(--body14-lh), $white-cl, none);
+                            }
+                        }
+                    }
+                    .line {
+                        width: 100%;
+                        border: 0.5px solid $white-cl;
+                        margin: 45px 0;
+                    }
+                    .bottom {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        .item {
+                            display: flex;
+                            align-items: center;
+                            img {
+                                width: 76px;
+                                height: 76px;
+                            }
+                            .text {
+                                padding-left: 16px;
+                                span {
+                                    @include text(16px, ol, 24px, $white-cl, none);
+                                }
+                                p {
+                                    @include text(14px, ci, 24px, $white-cl, none);
+                                }
+                            }
+                        }
+                    }
+                }
+                .another {
+                    display: flex;
+                    flex-direction: column;
+                    .title {
+                        margin-bottom: 50px;
+                    }
+                    .boxes {
+                        display: flex;
+                        gap: 25px;
+                        .box {
+                            @include mid(true);
+                            h4 {
+                                margin-top: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
