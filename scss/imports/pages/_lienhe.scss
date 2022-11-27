@@ -3,7 +3,8 @@
         .container {
             width: 100%;
             display: flex;
-            .form {
+
+            .scoc__form {
                 width: 52%;
                 margin-top: 70px;
                 position: relative;
@@ -69,6 +70,18 @@
                         display: flex;
                         gap: 16px;
                     }
+                }
+            }
+            @include md {
+                gap: 30px;
+                @include mid(true);
+                .scoc__form {
+                    margin-top: 0px;
+                    width: 588px;
+                }
+                .scoc__content {
+                    padding-left: 0;
+                    width: 80%;
                 }
             }
         }

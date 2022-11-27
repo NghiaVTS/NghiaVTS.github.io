@@ -42,7 +42,7 @@ a {
         }
     }
     @include xs {
-        padding: 0 30px;
+        padding: 16px 42.5px;
     }
 }
 
@@ -206,7 +206,7 @@ a {
         width: 22%;
         height: 100%;
         background-color: #151b20;
-        z-index: 5;
+        z-index: 4;
     }
     // &::after {
     //     position: absolute;
@@ -306,7 +306,7 @@ a {
 .header_box {
     .section {
         margin-bottom: 10px;
-        @include text(24px, ci, 40px, $btn-yellow-cl, none);
+        @include text(24px, ci, 40px, $yellow-cl, none);
     }
     @include mid(true);
     margin-bottom: 70px;
@@ -349,6 +349,8 @@ a {
     gap: 24px;
     .item {
         max-width: 384px;
+        transform: scale(1);
+        @include transition($t);
         .img {
             overflow: hidden;
             height: 0;
@@ -392,7 +394,7 @@ a {
             }
         }
         &:hover {
-            scale: 1.1;
+            transform: scale(1.1);
             @include transition($t);
         }
     }

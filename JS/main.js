@@ -13,7 +13,7 @@ function toggleActive(item) {
 
 //back to top
 function btt() {
-    let btn = document.querySelector('.btn-btt');
+    let btn = document.querySelector('.footer .btt-btn');
     if (document.contains(btn) == true) {
         btn.addEventListener('click', function () {
             window.scrollTo({
@@ -49,27 +49,27 @@ function navMenu() {
 }
 
 //video pop up
-// function videoPopUp() {
-//     let box = document.querySelector('.videobox'),
-//         video = document.querySelectorAll('.video'),
-//         close = document.querySelector('.close-btn');
+function videoPopUp() {
+    let box = document.querySelector('.videobox'),
+        video = document.querySelectorAll('.video'),
+        close = document.querySelector('.close-btn');
 
-//     video.forEach(function (item) {
-//         item.addEventListener('click', function (event) {
-//             let iframe = document.querySelector('.iframe')
-//             data = this.dataset.src;
-//             iframe.setAttribute('src', data);
-//             addActive(box)
-//         })
-//     });
+    video.forEach(function (item) {
+        item.addEventListener('click', function (event) {
+            let iframe = document.querySelector('.iframe')
+            data = this.dataset.src;
+            iframe.setAttribute('src', data);
+            addActive(box)
+        })
+    });
 
-//     function unactive() {
-//         removeActive(box)
-//     }
-//     close.addEventListener('click', function () {
-//         unactive()
-//     });
-// }
+    function unactive() {
+        removeActive(box)
+    }
+    close.addEventListener('click', function () {
+        unactive()
+    });
+}
 
 // //test flikity
 // function slider() {
@@ -130,18 +130,18 @@ function imgSlide() {
 }
 
 //gallery
-// function galleryShow() {
-//     Fancybox.bind('[data-fancybox]', {
-//         caption: function (fancybox, carousel, slide) {
-//             return (
-//                 `${slide.index + 1} / ${carousel.slides.length} <br />` + slide.caption
-//             );
-//         },
-//     });
-// }
+function galleryShow() {
+    Fancybox.bind('[data-fancybox]', {
+        caption: function (fancybox, carousel, slide) {
+            return (
+                `${slide.index + 1} / ${carousel.slides.length} <br />` + slide.caption
+            );
+        },
+    });
+}
 
 
 window.addEventListener('load', function () {
-    btt(); navMenu(); imgSlide();
-    // videoPopUp();  galleryShow(); slider();
+    btt(); navMenu(); imgSlide(); videoPopUp(); galleryShow();
+    //    slider();
 })

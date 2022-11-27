@@ -32,6 +32,9 @@
                         form {
                             width: 100%;
                             padding: 0 100px;
+                            @include xs {
+                                padding: 0;
+                            }
                             input:not(:last-child) {
                                 background-color: black;
                             }
@@ -109,6 +112,9 @@
                         }
                     }
                 }
+            }
+            @include sm {
+                grid-template-columns: 1fr;
             }
         }
     }
